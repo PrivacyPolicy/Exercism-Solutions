@@ -33,15 +33,15 @@ class Sieve
         
         # mark all multiples as composite
         $mult = prime * 2
-        while $mult <= @@range[1]
+        while $mult < @@range[1]
             @@marked[$mult] = COMP
             $mult += prime
         end
         
         # find the next unmarked number (will be prime)
-        while prime <= @@range[1]
+        while prime < @@range[1]
             prime += 1
-            if @@marked[prime] != COMP
+            if @@marked[prime] != COMP and prime % 2 != 0
                 return self.primes_rec prime
             end
         end
