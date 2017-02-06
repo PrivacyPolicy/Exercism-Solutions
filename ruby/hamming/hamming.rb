@@ -1,3 +1,7 @@
+module BookKeeping
+    VERSION = 3
+end
+
 class Hamming
     def self.compute(a, b)
         throw :ArgumentError if a.length != b.length
