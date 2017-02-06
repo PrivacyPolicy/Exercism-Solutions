@@ -21,23 +21,25 @@ class Sieve
     def self.primes
         if @@range[1] < 2
             return []
+        elsif @@range[1] == 2
+            return [2]
         else
             return self.primes_rec 3
         end
     end
     
     def self.primes_rec(prime)
-        @@primes.add(prime)
+        @@primes.push(prime)
         
         # mark all multiples as composite
-        mult = primes * 2
-        while mult < @@range[1]
-            @@marked[mult] = COMP
-            mult += primes
+        $mult = prime * 2
+        while $mult <= @@range[1]
+            @@marked[$mult] = COMP
+            $mult += prime
         end
         
         # find the next unmarked number (will be prime)
-        while prime < @@range[1]
+        while prime <= @@range[1]
             prime += 1
             if @@marked[prime] != COMP
                 return self.primes_rec prime
