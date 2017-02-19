@@ -38,7 +38,7 @@ class Prime
         end
         
         # find the next unmarked number (will be prime)
-        while @@primes.length < @@n
+        while @@primes.length < @@n + 1
             prime += 1
             if @@marked[prime] != COMP and prime % 2 != 0
                 return self.primes_rec prime
