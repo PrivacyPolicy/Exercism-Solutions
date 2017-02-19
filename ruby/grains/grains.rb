@@ -8,14 +8,14 @@ class Grains
     @@squares[0] = 1
     
     def self.square(n)
-        n -= 1
         i = 1
         while i < n
             if @@squares[i] == 0
                 @@squares[i] = @@squares[i - 1] * 2
             end
+            i += 1
         end
-        @@squares[n]
+        @@squares[n - 1]
     end
     
     def self.total
