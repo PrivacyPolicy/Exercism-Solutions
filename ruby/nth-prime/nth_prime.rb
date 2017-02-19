@@ -13,6 +13,9 @@ class Prime
     @@max = 4
     
     def self.nth(n)
+        if n < 1
+            raise ArgumentError.new("There is no zeroeth prime");
+        end
         @@n = n
         @@max = n * n
         @@primes = [2]
