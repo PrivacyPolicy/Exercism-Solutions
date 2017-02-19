@@ -20,7 +20,7 @@ class Prime
     end
     
     def self.primes
-        if @@n <= 2
+        if @@n <= 1
             return [2]
         else
             return self.primes_rec 3
@@ -38,7 +38,7 @@ class Prime
         end
         
         # find the next unmarked number (will be prime)
-        while @@primes.length < @@max
+        while @@primes.length < @@n
             prime += 1
             if @@marked[prime] != COMP and prime % 2 != 0
                 return self.primes_rec prime
