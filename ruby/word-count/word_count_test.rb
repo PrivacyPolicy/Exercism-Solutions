@@ -62,14 +62,14 @@ class PhraseTest < Minitest::Test
   end
 
   def test_with_apostrophes
-    skip
+#    skip
     phrase = Phrase.new("First: don't laugh. Then: don't cry.")
     counts = {"first"=>1, "don't"=>2, "laugh"=>1, "then"=>1, "cry"=>1}
     assert_equal counts, phrase.word_count
   end
 
   def test_with_quotations
-    skip
+#    skip
     phrase = Phrase.new("Joe can't tell between 'large' and large.")
     counts = {"joe"=>1, "can't"=>1, "tell"=>1, "between"=>1, "large"=>2, "and"=>1}
     assert_equal counts, phrase.word_count

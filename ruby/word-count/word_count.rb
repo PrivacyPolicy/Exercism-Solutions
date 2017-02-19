@@ -9,7 +9,9 @@ class Phrase
     
     def self.new(str)
         @@counts = {}
-        @@words = str.downcase.gsub(/[^a-z0-9]/, ' ').split(' ')
+        str = str.downcase.gsub(/[^a-z0-9']/, ' ')
+        str = str.gsub(/'([a-z]+)'/, '\1')
+        @@words = str.split(' ')
         self
     end
     def self.word_count
