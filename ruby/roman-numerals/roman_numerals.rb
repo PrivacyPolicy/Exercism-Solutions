@@ -26,18 +26,17 @@ class Fixnum
         [I+X, X+C, C+M],       # 9
         ]
     
-    def to_roman
+    def to_roman # 402
         str = self.to_s
         result = ''
         div = 1
         place = 1
-        if self == 1
-            return I
-        end
-        while self / div > 1
+        while self / div >= 1
             div *= 10
             num = str[str.length - place].to_i
-            result = @@conv[num][place - 1] + result
+            if num != 0
+                result = @@conv[num][place - 1] + result
+            end
             place += 1
         end
         result
