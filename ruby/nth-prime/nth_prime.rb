@@ -14,7 +14,9 @@ class Prime
     
     def self.nth(n)
         @@n = n
-        @@mac = n * n
+        @@max = n * n
+        @@primes = [2]
+        @@marked = [0]
         list = primes
         list[list.length - 1]
     end
@@ -38,7 +40,7 @@ class Prime
         end
         
         # find the next unmarked number (will be prime)
-        while @@primes.length < @@n + 1
+        while @@primes.length < @@n
             prime += 1
             if @@marked[prime] != COMP and prime % 2 != 0
                 return self.primes_rec prime
