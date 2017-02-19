@@ -42,22 +42,22 @@ class RomanNumeralsTest < Minitest::Test
   end
 
   def test_27
-    skip
+#    skip
     assert_equal 'XXVII', 27.to_roman
   end
 
   def test_48
-    skip
+#    skip
     assert_equal 'XLVIII', 48.to_roman
   end
 
   def test_59
-    skip
+#    skip
     assert_equal 'LIX', 59.to_roman
   end
 
   def test_93
-    skip
+#    skip
     assert_equal 'XCIII', 93.to_roman
   end
 

@@ -37,7 +37,7 @@ class Fixnum
         while self / div > 1
             div *= 10
             num = str[str.length - place].to_i
-            result += @@conv[num][place - 1]
+            result = @@conv[num][place - 1] + result
             place += 1
         end
         result
