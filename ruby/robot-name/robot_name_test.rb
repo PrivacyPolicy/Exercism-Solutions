@@ -28,13 +28,13 @@ class RobotTest < Minitest::Test
   end
 
   def test_different_robots_have_different_names
-    skip
+#    skip
     Kernel.srand DIFFERENT_ROBOT_NAME_SEED
     refute_equal Robot.new.name, Robot.new.name
   end
 
   def test_reset_name
-    skip
+#    skip
     Kernel.srand DIFFERENT_ROBOT_NAME_SEED
     robot = Robot.new
     name = robot.name
