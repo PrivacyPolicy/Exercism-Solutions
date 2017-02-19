@@ -8,6 +8,9 @@ class Grains
     @@squares[0] = 1
     
     def self.square(n)
+        if n < 1 || n > 64
+            raise ArgumentError
+        end
         i = 1
         while i < n
             if @@squares[i] == 0
